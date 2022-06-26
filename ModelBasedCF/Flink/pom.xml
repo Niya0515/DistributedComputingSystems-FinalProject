@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.quan.kg</groupId>
+	<artifactId>neo4j</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>flink</name>
+	<description>Demo Project for Graph Computation on Flink</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.4.RELEASE</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<flink.version>1.10.0</flink.version>
+		<alink.version>1.1.0</alink.version>
+		<flink.version_ml>1.8.3</flink.version_ml>
+		<neo4j.driver>1.6.2</neo4j.driver>
+		<neo4j.algo>3.4.7.0</neo4j.algo>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-gelly_2.11</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-ml-api -->
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-ml_2.11</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba.alink</groupId>
+			<artifactId>alink_core_flink-1.10_2.11</artifactId>
+			<version>${alink.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-streaming-scala_2.11</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-table-planner_2.11</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.neo4j.driver/neo4j-java-driver -->
+		<dependency>
+			<groupId>org.neo4j.driver</groupId>
+			<artifactId>neo4j-java-driver</artifactId>
+			<version>${neo4j.driver}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.neo4j/graph-algorithms-algo -->
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>graph-algorithms-algo</artifactId>
+			<version>${neo4j.algo}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
